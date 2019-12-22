@@ -1,4 +1,4 @@
-sudo: false
+os: osx
 
 language: node_js
 node_js:
@@ -22,11 +22,11 @@ before_deploy:
 
 deploy:
   provider: pages
-  skip-cleanup: true # set skip_cleanup to true, otherwise Travis will delete all the files created during the build
-  github_token: $GITHUB_TOKEN
+  skip_cleanup: true # set skip_cleanup to true, otherwise Travis will delete all the files created during the build
+  token: $GITHUB_TOKEN
   on:
     branch: manuscript
-  local-dir: public
+  local_dir: public
   target_branch: master
-  keep-history: false
+  keep_history: false
   verbose: true
