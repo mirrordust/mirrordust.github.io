@@ -102,4 +102,4 @@ deploy:
 
 # Overriding theme config
 theme_config:
-  scheme: Gemini
+  scheme: Mist

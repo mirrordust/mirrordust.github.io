@@ -15,10 +15,9 @@ script:
   - npm install
   - hexo clean
   - hexo generate # generate static files
-  - ls -la -R public
 
 before_deploy:
-  - cp CNAME LICENSE README.md public # copy CNAME for custom domain
+  - cp CNAME public # copy CNAME for custom domain
 
 deploy:
   provider: pages
