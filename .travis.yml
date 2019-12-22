@@ -28,5 +28,5 @@ deploy:
     branch: manuscript
   local-dir: public
   target_branch: master
-  keep-history: true
+  keep-history: false
   verbose: true
