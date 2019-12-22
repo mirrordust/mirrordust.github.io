@@ -10,6 +10,9 @@ branches:
   only:
     - manuscript # build manuscript branch only
 
+install:
+  - git submodule update --init --recursive
+
 script:
   - npm install hexo-cli -g
   - npm install
