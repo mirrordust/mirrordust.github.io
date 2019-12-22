@@ -21,6 +21,7 @@ before_deploy:
   - cp CNAME public # copy CNAME for custom domain
 
 deploy:
+  edge: true
   provider: pages
   cleanup: false
   token: $GITHUB_TOKEN
