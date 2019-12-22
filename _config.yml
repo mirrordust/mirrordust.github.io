@@ -102,4 +102,4 @@ deploy:
 
 # Overriding theme config
 theme_config:
-  scheme: Mist
+  scheme: Muse

@@ -21,9 +21,8 @@ before_deploy:
   - cp CNAME public # copy CNAME for custom domain
 
 deploy:
-  edge: true
   provider: pages
-  cleanup: false
+  skip_cleanup: true # set skip_cleanup to true, otherwise Travis will delete all the files created during the build
   token: $GITHUB_TOKEN
   on:
     branch: manuscript
