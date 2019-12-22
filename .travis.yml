@@ -1,0 +1,31 @@
+sudo: false
+
+language: node_js
+node_js:
+  - 10 # use nodejs v10 LTS
+
+cache: npm
+
+branches:
+  only:
+    - manuscript # build manuscript branch only
+
+script:
+  - npm install hexo-cli -g
+  - npm install
+  - hexo clean
+  - hexo generate # generate static files
+
+before_deploy:
+  - cp CNAME LICENSE README.md public # copy CNAME for custom domain
+
+deploy:
+  provider: pages
+  skip-cleanup: true # set skip_cleanup to true, otherwise Travis will delete all the files created during the build
+  github_token: $GITHUB_TOKEN
+  on:
+    branch: manuscript
+  local-dir: public
+  target_branch: master
+  keep-history: true
+  verbose: true
